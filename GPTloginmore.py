@@ -1,29 +1,13 @@
 import openai
 import streamlit as st
-from dotenv import load_dotenv
-import os
-
-# Load the environment variables
-load_dotenv()
-
-# Initialize the session state
-st.session_state['logged_in'] = False if 'logged_in' not in st.session_state else st.session_state['logged_in']
-
-import openai
-import streamlit as st
-from dotenv import load_dotenv
-import os
-
-# Load the environment variables
-load_dotenv()
 
 # Initialize the session state
 st.session_state['logged_in'] = False if 'logged_in' not in st.session_state else st.session_state['logged_in']
 
 # Define your dictionary of users and passwords
 USER_CREDENTIALS = {
-    os.getenv('USERNAME1'): os.getenv('PASSWORD1'),
-    os.getenv('USERNAME2'): os.getenv('PASSWORD2'),
+    st.secrets['USERNAME1']: st.secrets['PASSWORD1'],
+    st.secrets['USERNAME2']: st.secrets['PASSWORD2'],
     # Add more as needed
 }
 
@@ -38,9 +22,6 @@ def login():
             chatbot()
         else:
             st.warning("Incorrect Username/Password")
-#... rest of the script
-
-
 
 def chatbot():
     st.title("ChatGPT-like clone")
@@ -85,7 +66,6 @@ def main():
         login()
 
 if __name__ == "__main__":
-    openai.api_key = os.getenv('OPENAI_API_KEY')  # Get the API key from the environment variable
+    openai.api_key = st.secrets['OPENAI_API_KEY']  # Get the API key from the secrets
     main()
-
 
