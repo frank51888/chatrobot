@@ -89,5 +89,3 @@ if __name__ == "__main__":
     main()
 
 
-#  Local URL: http://localhost:8521
- # Network URL: http://192.168.1.119:8521
