@@ -8,10 +8,10 @@ st.session_state['logged_in'] = False if 'logged_in' not in st.session_state els
 USER_CREDENTIALS = {
     st.secrets['USERNAME1']: st.secrets['PASSWORD1'],
     st.secrets['USERNAME2']: st.secrets['PASSWORD2'],
-    st.secrets['USERNAME3']: st.secrets['PASSWORD3']
-    st.secrets['USERNAME4']: st.secrets['PASSWORD4']
-    st.secrets['USERNAME5']: st.secrets['PASSWORD5']
-    st.secrets['USERNAME6']: st.secrets['PASSWORD6']
+    st.secrets['USERNAME3']: st.secrets['PASSWORD3'],
+    st.secrets['USERNAME4']: st.secrets['PASSWORD4'],
+    st.secrets['USERNAME5']: st.secrets['PASSWORD5'],
+    
     # Add more as needed
 }
 
